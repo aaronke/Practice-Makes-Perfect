@@ -10,10 +10,14 @@ s = "rat", t = "car", return false.
 **The fist step** is to understand what anagram is. Anagram is to rerange the word into a new word by using all the original characters. Each character is only allowed to used exactly once. 
 
 So we should clariy whether two empty string  are valid anagram, the answer from Leetcode test is YES. And then obviously, with different length of strings, it will definietly not be valid. If they are with same lengths and equal with each other after sorting, they are valid anagram.
-
-1. Sorting (See code below)
-2. hashtable 
-
+                  
+1. Sorting  
+    * Time Complexity:  O(nlogn) 
+    * Space Complexity: O(n) or O(1) (Depend on sorting algorithm in python)
+2. hashtable
+    * Time Complexity:  O(n) 
+    * Space Complexity: O(n)
+    
 ####tags: *Easy, Sort, Anagram*
 
 ## Python Code
@@ -30,9 +34,31 @@ So we should clariy whether two empty string  are valid anagram, the answer from
 	        
 	        if (lens != lent):
 	            return False
+	        # Method 1        
+	        # if sorted(s) != sorted(t):
+	        #     return False
+	        # return True    
 	        
-	        if sorted(s) != sorted(t):
-	            return False
+	        # Method 2    
+	        sdic = {}
+	        for i in s:
+	            if i not in sdic:
+	                sdic[i] = 1
+	            else:
+	                sdic[i] = sdic[i] + 1
+	        
+	        tdic = {}        
+	        for i in t:
+	            if i not in tdic:
+	                tdic[i] = 1
+	            else:
+	                tdic[i] = tdic[i] + 1   
+	        
+	        for key, value in sdic.iteritems():
+	            if key not in tdic:
+	                return False
+	            if tdic[key] != value:
+	                return False
 	        return True
         
 ## Notes
@@ -47,5 +73,7 @@ So we should clariy whether two empty string  are valid anagram, the answer from
 	`sorted(student_objects, key=lambda student: student.age)  # sort by age`
    
    [More details in offical docs](https://wiki.python.org/moin/HowTo/Sorting)
+   
+3. This problem has been seen in Epic interview. It is required to use hashtable method. See more details on [一亩三分地](http://www.1point3acres.com/bbs/thread-140532-1-1.html).  
 
 
