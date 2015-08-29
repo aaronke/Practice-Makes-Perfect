@@ -98,7 +98,9 @@ Stackoverflow [link](http://stackoverflow.com/questions/3294889/iterating-over-d
 StackOverflow [Link](http://stackoverflow.com/questions/521674/initializing-a-list-to-a-known-number-of-elements-in-python)  
 For one D:`newArray = [0]*length`  
 For two D: `newArray = [[0]\*length1, [0]*length2]
-6. how to get the off-set index of character in python  
+6. All the operator with eaqua sign, the non-equal sign should be left.
+Examples, `<=`, `!=`, `>=` and so on.
+7. how to get the off-set index of character in python  
 StackOverflow [link](http://stackoverflow.com/questions/2294493/how-to-get-the-position-of-a-character-in-python)
 We need introduce string module in python. It will get the index for each letters. (Applied in Method 3)
 
@@ -114,8 +116,6 @@ In [65]: string.uppercase
 Out[65]: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 ~~~	
 
-7. All the operator with eaqua sign, the non-equal sign should be left.
-Examples, `<=`, `!=`, `>=` and so on.
 
 
 
