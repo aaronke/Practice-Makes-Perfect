@@ -99,6 +99,7 @@ StackOverflow [Link](http://stackoverflow.com/questions/521674/initializing-a-li
 For one D:`newArray = [0]*length`  
 For two D: `newArray = [[0]\*length1, [0]*length2]
 6. how to get the off-set index of character in python  
+StackOverflow [link](http://stackoverflow.com/questions/2294493/how-to-get-the-position-of-a-character-in-python)
 We need introduce string module in python. It will get the index for each letters. (Applied in Method 3)
 
 ~~~python
