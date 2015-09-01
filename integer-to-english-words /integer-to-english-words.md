@@ -11,7 +11,7 @@ Convert a non-negative integer to its english words representation. Given input 
 ~~~
 
 ## Analysis
-At the beginning, I wrongly thought each module is divided by 2 digits. But the truth is that each module should be divided by 3 digits. And with 3 digits, we share the same method.
+**Method 1 Tuitive:** At the beginning, I wrongly thought each module is divided by 2 digits. But the truth is that each module should be divided by 3 digits. And with 3 digits, we share the same method.
 
 Another difficulty is to distingwish the situations: `1)`, `2)` and `3)` could be discussed specifically. But for the result we could apply generlized method (Deal with 3 digit per loop). 
 
@@ -27,6 +27,10 @@ Another difficulty is to distingwish the situations: `1)`, `2)` and `3)` could b
 Finally, as for displaying result, originally, I used one string to represent all the middle results. However, it would a mess to controll the space when combining middle results. Therefore, a better way to do it is to take advantage of array in python. 
 
 There must be better methods. I will do research about them in future.
+
+**Method 2 -- Revised data structure:** Intead of just using array, we apply dictionary here to store the constant data and basically, combine digits and decades list into one d dictionary. `d= {0: "Zero", 1:"One", 2: "Two", 3: "Three", 4: "Four", ..... , 90: "Ninety"}` . It saves much work by considering `1-19, 20 ~ 90`together instead of splitting them.
+
+The idea is from the example code in [LeetCode discussion](https://leetcode.com/discuss/55265/share-my-python-solution). See my implementation in this github folder.
 
 ## Python Code
 ~~~
@@ -115,7 +119,9 @@ The basic idea is shown in code above. Define varible in class but outside of fu
    Stackoverflow [Link](http://stackoverflow.com/questions/493819/python-join-why-is-it-string-joinlist-instead-of-list-joinstring)  
     Just apply `' '.join(targetList)` as example code above.
 
-4. At the beginning, I made tons of mistakes about creating modules. Understand relationship FIRSTLY!
+4. when you use dictionary and see `keyerror: 'something'`, it means `something` string is not a key in that dictionary!!
+
+5. At the beginning, I made tons of mistakes about creating modules. Understand relationship FIRSTLY!
  
 
  
