@@ -51,4 +51,30 @@ class Solution(object):
         return 0
 ~~~
 
+
+## H-Index II -- Update
+**Follow up for H-Index:** What if the citations array is sorted in ascending order? Could you optimize your algorithm?
+
+~~~
+class Solution(object):
+    def hIndex(self, citations):
+        """
+        :type citations: List[int]
+        :rtype: int
+        """
+        l =  len(citations)
+        
+        rs = 0
+        # nums = [0] * (l+1)
+        while citations:
+            a =  citations.pop()
+            if rs < a:
+                rs = rs + 1
+        return rs
+~~~
+
+This is simple but is also easy to make mistake!! Review it often.
+
+
+
         
