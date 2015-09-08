@@ -20,8 +20,8 @@ class Solution(object):
         middle = slow.next
         while middle:
             aNode = middle
-            aNode.next = nextNode
             middle = middle.next
+            aNode.next = nextNode
             nextNode = aNode
         
         while aNode and head:
