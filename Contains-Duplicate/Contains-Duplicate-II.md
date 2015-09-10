@@ -13,8 +13,14 @@ Given an array of integers and an integer `k`, find out whether there are two di
 * Space Complexity -- `O(1)`
 
 **Method 3 and 4**-- Take advantage of hashtable and record the minimum gap for the pair with the same numbers.
-* Time Complexity -- `O(n)`
-* Space Complexity -- `O(n)`
+
+* Time Complexity -- `O(k*n)`
+* Space Complexity -- `O(n)` --  hashtable size
+
+**Method 5**-- Think about sliding window. The window size is `k`. If there is duplicate within `k` elements, then it returns `True`. Remeber to use set data structure in python and record end and start index. 
+
+* Time Complexity -- `O(k*n)`
+* Space Complexity -- `O(k)` -- window size
 
 ## Python Code
 ~~~Python
@@ -67,21 +73,36 @@ class Solution(object):
     #         return True
 
         # Method 4  Refined hashTable
-        l = len(nums)
-        hashNums = {}
-        minGap = k+1
-        for i in range(l):
-            if nums[i] not in hashNums:
-                hashNums[nums[i]] = [i]
-            else:
-                if len(hashNums[nums[i]]) != 1:
-                    hashNums[nums[i]].pop(0)
-                hashNums[nums[i]].append(i)
-                if (hashNums[nums[i]][1] - hashNums[nums[i]][0]) < minGap:
-                    minGap = hashNums[nums[i]][1] - hashNums[nums[i]][0]
+        # l = len(nums)
+        # hashNums = {}
+        # minGap = k+1
+        # for i in range(l):
+        #     if nums[i] not in hashNums:
+        #         hashNums[nums[i]] = [i]
+        #     else:
+        #         if len(hashNums[nums[i]]) != 1:
+        #             hashNums[nums[i]].pop(0)
+        #         hashNums[nums[i]].append(i)
+        #         if (hashNums[nums[i]][1] - hashNums[nums[i]][0]) < minGap:
+        #             minGap = hashNums[nums[i]][1] - hashNums[nums[i]][0]
                     
-        if minGap <= k:
-            return True
+        # if minGap <= k:
+        #     return True
+        # return False
+        
+        # Method 5 Slide Window
+        setNum = set()
+        start = 0
+        end = 0
+        for i in range(len(nums)):
+            if  (nums[i] not in setNum):
+                end += 1
+                setNum.add(nums[i])
+            else:    
+                return True
+            if (end-start > k):
+                setNum.remove(nums[start])
+                start += 1 
         return False
     
 ~~~
@@ -89,6 +110,10 @@ class Solution(object):
 1. Remember to try to reduce the times of invoking embedded funtions. So for method 3, the refinement that moving the length checking outside of embedded function, will dramatically decrease the numbers of using checkGap method.
 
 2. The refinement from method 3 to method 4 is just because the only thing determin the return value is the minimum index gap between the same values in the number list.
+
+3.  How to init an empty set. StackoverFlow [Link](http://stackoverflow.com/questions/6130374/empty-set-literal-in-python)
+ `variableName = set()`
+
 
 
         
