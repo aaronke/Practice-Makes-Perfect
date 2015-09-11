@@ -14,6 +14,8 @@ Method 2 -- Consider the code in Leetcode [discussion](https://leetcode.com/disc
 
 To be undstood!!
 
+Method 3 -- Dynamic Programming. The trick here is to use array to store the middle results. The Java implementation is [here](https://leetcode.com/discuss/57320/java-dp-solution-not-perfect-o-n-time-but-simple).
+
 ## Python Code
 ~~~Python
 # class Solution(object):
@@ -73,6 +75,23 @@ class Solution(object):
 #                 rs.append(dp[-i*i])
 #             dp += min(dp[-i*i] for i in range(1, int(len(dp)**0.5+1))) + 1,
 #         return dp[n] 
-~~~
 
+        # Method 3 -- Dynamic Programming -- works but Time Exceed Limit-- Remeber to use array to store previous status
+ #       if n == 0:
+ #           return 0
+ #       count = 1
+ #       numList = [None]*n
+ #       for i in range(n):
+ #           if((i+1) == count*count):
+ #               numList[i] = 1
+ #               count += 1
+ #           else:
+ #               minVal = i+1
+ #               for j in range(1, count):
+ #                   if minVal > (numList[i-j*j]  + 1):
+ #                       minVal = numList[i-j*j]  + 1
+ #               numList[i] = minVal
+ #       return numList[n-1]
+~~~
 ## Notes
+1. Remeber that when considering about dynamic programming, the index of array could be easily used to store the middle result.
