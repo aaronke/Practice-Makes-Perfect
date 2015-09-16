@@ -11,7 +11,7 @@ Here are some notes from Google Tech Interview Prep Session at UVa.
 ### General Take Home Ideas:
 1. Think interview as a back-and-forth discussion, but not question-and-answer session. Therefore, alway make sure Interviewer is on the same page with you. In another word, please think loud and over-communicate is better than no communication.
 
-2. Interviewer cares how candidate analyzes problem. how quickly condidate learn and  how effectively condidate communicate with others. Specifically, when it comes to algorithm issues, they would see if interviewees divide the problem in a logical way or if they set properate prioritier when facing multiple sub-problems. During the process, they would also consider about whether you are person pleasant to work with.
+2. Interviewer cares how candidate analyzes problem, how quickly condidate learn and how effectively condidate communicate with others. Specifically, when it comes to algorithm issues, they would see if interviewees divide the problem in a logical way or if they set properate prioritier when facing multiple sub-problems. During the process, they would also consider about whether you are person pleasant to work with.
 
 3. Don't be frustrated, "bombed" an interview but still can get hired. You might not finish the question, but it's fine also.
 
@@ -48,7 +48,9 @@ Here are some notes from Google Tech Interview Prep Session at UVa.
 
 
 ## Sample Question
-Imagine you have word A and word B, please find the shortest steps to convert A to B and then return the path of those steps.
+1. Imagine you have word A and word B, please find the shortest steps to convert A to B and then return the path of those steps.
+
+2. You are given a magazine and a ransom note. Write an algorithm to determine if the magazine contains sufficient characters to cut out and construct the ransom note. 
 
 
 
