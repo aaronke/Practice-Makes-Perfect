@@ -1,7 +1,6 @@
 # [Title](link)
 
 ## Description
-
 ## Analysis
 ### Clarifications
 
