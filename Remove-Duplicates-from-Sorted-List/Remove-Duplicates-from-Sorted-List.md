@@ -23,6 +23,8 @@ Again, it is easy one, but still also easy to make mistake.
         while head and head.next:
 ~~~
 
+And also it can use recursion to implement it easily. It is a problem where `Solution(n) = Solution (n-1) + O(1)`. See Method 2 below.
+
 * Time Complexity: `O(n)`
 * Space Complexity: `O(1)`
 
@@ -40,8 +42,6 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        # if head == None or head.next == None:
-        #     return head
         rs = head
         while head and head.next:
             if head.val == head.next.val:
@@ -49,6 +49,12 @@ class Solution(object):
             else:
                 head = head.next
         return rs
+        # # Method 2 -- Recursion
+        # if head == None or head.next == None:
+        #     return head
+        # newHead = self.deleteDuplicates(head.next)
+        # head.next = newHead
+        # return newHead if head.val == newHead.val else head
 ~~~
 ## Test Cases
 ~~~
