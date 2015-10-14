@@ -51,5 +51,43 @@ class Solution(object):
         return newHead
 ~~~
 
+
 ## Notes
 1. Please manully check the variable names before running the code. It is trival but very important！
+
+## Similar Issues
+
+The following code is supposed to rotate the array A by B positions.
+
+So, for example,
+
+~~~
+A : [1 2 3 4 5 6]
+B : 1
+~~~
+The output : `[2 3 4 5 6 1]`
+
+~~~
+class Solution:
+    # @param a : list of integers
+    # @param b : integer
+    # @return a list of integers
+    def rotateArray(self, a, b):
+    	 # method 1
+        # ret = []
+        # l = len(a)
+        # b = b%l
+        # for i in xrange(l-b):
+        #     ret.append(a[i + b])
+        
+        # for j in xrange(b):
+        #     ret.append(a[j])
+        
+        # Method 2 -- Simpler method- Think about mode!!
+        ret = []
+        l = len(a)
+        for i in xrange(l):
+            ret.append(a[(i+b)%l])
+            
+        return ret
+~~~
