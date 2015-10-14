@@ -121,4 +121,9 @@ for i in range(0,9):
     columns.append([False]*9)
 ~~~        
 
+# another way to initialize 2D array
+cells = [[False]*9 for i in range(9)]
+rows = [[False]*9 for i in range(9)]
+columns = [[False]*9 for i in range(9)]
+
 The place that I debugged my code and found the cause is called [Python Tutor](http://www.pythontutor.com/visualize.html#mode=edit). It can visualize the execution of python program and see the allocation of memory. It's powerful! Not only good for small program debugging, but also great for learning purpose.
